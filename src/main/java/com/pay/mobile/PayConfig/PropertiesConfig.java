@@ -49,6 +49,11 @@ public class PropertiesConfig {
     public static final String CHARSET = "utf-8";
 
     /**
+     * 参数格式
+     */
+    public static final String FORMAT = "json";
+
+    /**
      * 支付宝网关
      */
     public static final String GATEWAYURL = "https://openapi.alipaydev.com/gateway.do";

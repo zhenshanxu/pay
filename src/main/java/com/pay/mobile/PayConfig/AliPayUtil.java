@@ -17,16 +17,13 @@ import com.pay.mobile.Bean.AliPayBean;
 
 public class AliPayUtil {
 
-
-
-
     public static String connect(AliPayBean alipayBean) throws AlipayApiException {
         //1、获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(
                 PropertiesConfig.GATEWAYURL,//支付宝网关
                 PropertiesConfig.APP_ID,//appid
                 PropertiesConfig.MERCHANT_PRIVATE_KEY,//商户私钥
-                "json",
+                PropertiesConfig.FORMAT,//参数格式
                 PropertiesConfig.CHARSET,//字符编码格式
                 PropertiesConfig.ALIPAY_PUBLIC_KEY,//支付宝公钥
                 PropertiesConfig.SIGN_TYPE//签名方式
@@ -48,5 +45,5 @@ public class AliPayUtil {
         //返回付款信息
         return result;
     }
-    
+
 }
