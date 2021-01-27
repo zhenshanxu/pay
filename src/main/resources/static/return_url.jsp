@@ -10,6 +10,7 @@
 <%@ page import="com.alipay.config.*"%>
 <%@ page import="com.alipay.api.*"%>
 <%@ page import="com.alipay.api.internal.util.*"%>
+<%@ page import="com.pay.mobile.PayConfig.PropertiesConfig" %>
 <%
 /* *
  * 功能：支付宝服务器同步通知页面
@@ -39,7 +40,7 @@
 		params.put(name, valueStr);
 	}
 	
-	boolean signVerified = AlipaySignature.rsaCheckV1(params, AlipayConfig.alipay_public_key, AlipayConfig.charset, AlipayConfig.sign_type); //调用SDK验证签名
+	boolean signVerified = AlipaySignature.rsaCheckV1(params, PropertiesConfig.ALIPAY_PUBLIC_KEY, PropertiesConfig.CHARSET, PropertiesConfig.SIGN_TYPE); //调用SDK验证签名
 
 	//——请在这里编写您的程序（以下代码仅作参考）——
 	if(signVerified) {
